@@ -1,4 +1,6 @@
-const backendDomin = "https://be-anh-lich-1.onrender.com"
+const backendDomin = process.env.REACT_APP_API_URL;
+
+console.log(555555, backendDomin)
 
 const SummaryApi = {
     signUP : {
