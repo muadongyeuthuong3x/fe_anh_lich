@@ -1,4 +1,4 @@
-const backendDomin = "https://be-anh-lich-1.onrender.com/api/signin"
+const backendDomin = "https://be-anh-lich-1.onrender.com"
 
 const SummaryApi = {
     signUP : {
