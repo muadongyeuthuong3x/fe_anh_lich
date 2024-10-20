@@ -23,8 +23,9 @@ function App() {
 
       const dataApi = await dataResponse.json()
 
+
       if(dataApi.success){
-        dispatch(setUserDetails(dataApi.data))
+        localStorage.setItem("data-user", JSON.stringify(dataApi.data))
       }
   }
 

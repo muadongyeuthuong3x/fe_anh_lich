@@ -1,85 +1,109 @@
-const backendDomin = process.env.REACT_APP_API_URL;
+const backendDomain = process.env.REACT_APP_API_URL;
 
-console.log(555555, backendDomin)
+// Function to get the token from local storage
+const getToken = () => {
+    const data = localStorage.getItem("role_web");
+    if (data) {
+        const parsedData = JSON.parse(data);
+        return parsedData.cookies; // Assuming 'cookies' holds the token
+    }
+    return null;
+};
 
 const SummaryApi = {
-    signUP : {
-        url : `${backendDomin}/api/signup`,
-        method : "post"
+    signUP: {
+        url: `${backendDomain}/api/signup`,
+        method: "post",
     },
-    signIn : {
-        url : `${backendDomin}/api/signin`,
-        method : "post"
+    signIn: {
+        url: `${backendDomain}/api/signin`,
+        method: "post",
     },
-    current_user : {
-        url : `${backendDomin}/api/user-details`,
-        method : "get"
+    current_user: {
+        url: `${backendDomain}/api/user-details`,
+        method: "get",
+        headers: { Authorization: `Bearer ${getToken()}` }, // Add token here
     },
-    logout_user : {
-        url : `${backendDomin}/api/userLogout`,
-        method : 'get'
+    logout_user: {
+        url: `${backendDomain}/api/userLogout`,
+        method: 'get',
+        headers: { Authorization: `Bearer ${getToken()}` },
     },
-    allUser : {
-        url : `${backendDomin}/api/all-user`,
-        method : 'get'
+    allUser: {
+        url: `${backendDomain}/api/all-user`,
+        method: 'get',
+        headers: { Authorization: `Bearer ${getToken()}` },
     },
-    updateUser : {
-        url : `${backendDomin}/api/update-user`,
-        method : "post"
+    updateUser: {
+        url: `${backendDomain}/api/update-user`,
+        method: "post",
+        headers: { Authorization: `Bearer ${getToken()}` },
     },
-    uploadProduct : {
-        url : `${backendDomin}/api/upload-product`,
-        method : 'post'
+    uploadProduct: {
+        url: `${backendDomain}/api/upload-product`,
+        method: 'post',
+        headers: { Authorization: `Bearer ${getToken()}` },
     },
-    allProduct : {
-        url : `${backendDomin}/api/get-product`,
-        method : 'get'
+    allProduct: {
+        url: `${backendDomain}/api/get-product`,
+        method: 'get',
+        headers: { Authorization: `Bearer ${getToken()}` },
     },
-    updateProduct : {
-        url : `${backendDomin}/api/update-product`,
-        method  : 'post'
+    updateProduct: {
+        url: `${backendDomain}/api/update-product`,
+        method: 'post',
+        headers: { Authorization: `Bearer ${getToken()}` },
     },
-    categoryProduct : {
-        url : `${backendDomin}/api/get-categoryProduct`,
-        method : 'get'
+    categoryProduct: {
+        url: `${backendDomain}/api/get-categoryProduct`,
+        method: 'get',
+        headers: { Authorization: `Bearer ${getToken()}` },
     },
-    categoryWiseProduct : {
-        url : `${backendDomin}/api/category-product`,
-        method : 'post'
+    categoryWiseProduct: {
+        url: `${backendDomain}/api/category-product`,
+        method: 'post',
+        headers: { Authorization: `Bearer ${getToken()}` },
     },
-    productDetails : {
-        url : `${backendDomin}/api/product-details`,
-        method : 'post'
+    productDetails: {
+        url: `${backendDomain}/api/product-details`,
+        method: 'post',
+        headers: { Authorization: `Bearer ${getToken()}` },
     },
-    addToCartProduct : {
-        url : `${backendDomin}/api/addtocart`,
-        method : 'post'
+    addToCartProduct: {
+        url: `${backendDomain}/api/addtocart`,
+        method: 'post',
+        headers: { Authorization: `Bearer ${getToken()}` },
     },
-    addToCartProductCount : {
-        url : `${backendDomin}/api/countAddToCartProduct`,
-        method : 'get'
+    addToCartProductCount: {
+        url: `${backendDomain}/api/countAddToCartProduct`,
+        method: 'get',
+        headers: { Authorization: `Bearer ${getToken()}` },
     },
-    addToCartProductView : {
-        url : `${backendDomin}/api/view-card-product`,
-        method : 'get'
+    addToCartProductView: {
+        url: `${backendDomain}/api/view-card-product`,
+        method: 'get',
+        headers: { Authorization: `Bearer ${getToken()}` },
     },
-    updateCartProduct : {
-        url : `${backendDomin}/api/update-cart-product`,
-        method : 'post'
+    updateCartProduct: {
+        url: `${backendDomain}/api/update-cart-product`,
+        method: 'post',
+        headers: { Authorization: `Bearer ${getToken()}` },
     },
-    deleteCartProduct : {
-        url : `${backendDomin}/api/delete-cart-product`,
-        method : 'post'
+    deleteCartProduct: {
+        url: `${backendDomain}/api/delete-cart-product`,
+        method: 'post',
+        headers: { Authorization: `Bearer ${getToken()}` },
     },
-    searchProduct : {
-        url : `${backendDomin}/api/search`,
-        method : 'get'
+    searchProduct: {
+        url: `${backendDomain}/api/search`,
+        method: 'get',
+        headers: { Authorization: `Bearer ${getToken()}` },
     },
-    filterProduct : {
-        url : `${backendDomin}/api/filter-product`,
-        method : 'post'
-    }
-}
+    filterProduct: {
+        url: `${backendDomain}/api/filter-product`,
+        method: 'post',
+        headers: { Authorization: `Bearer ${getToken()}` },
+    },
+};
 
-
-export default SummaryApi
+export default SummaryApi;

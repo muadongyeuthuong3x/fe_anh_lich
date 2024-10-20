@@ -1,18 +1,22 @@
-import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
 import { FaRegCircleUser } from "react-icons/fa6";
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import ROLE from '../common/role';
 
 const AdminPanel = () => {
-    const user = useSelector(state => state?.user?.user)
     const navigate = useNavigate()
+    const dataLoginUser =  JSON.parse(localStorage.getItem('data_login_user')) || {}
     useEffect(()=>{
-        const role = JSON.parse(localStorage.getItem('role_web'))
-        if(role !== ROLE.ADMIN){
+        const dataLogin = JSON.parse(localStorage.getItem('role_web')) || false
+        if(!dataLogin) {
+        
             navigate("/")
         }
-    },[user])
+        const { role_web  } = dataLogin;
+        if(role_web !== ROLE.ADMIN){
+           navigate("/")
+        }
+    },[])
 
   return (
     <div className='min-h-[calc(100vh-120px)] md:flex hidden'>
@@ -21,15 +25,15 @@ const AdminPanel = () => {
                 <div className='h-32  flex justify-center items-center flex-col'>
                     <div className='text-5xl cursor-pointer relative flex justify-center'>
                         {
-                        user?.profilePic ? (
-                            <img src={user?.profilePic} className='w-20 h-20 rounded-full' alt={user?.name} />
+                        dataLoginUser?.profilePic ? (
+                            <img src={dataLoginUser?.profilePic} className='w-20 h-20 rounded-full' alt={dataLoginUser?.name} />
                         ) : (
                             <FaRegCircleUser/>
                         )
                         }
                     </div>
-                    <p className='capitalize text-lg font-semibold'>{user?.name}</p>
-                    <p className='text-sm'>{user?.role}</p>
+                    <p className='capitalize text-lg font-semibold'>{dataLoginUser?.name}</p>
+                    <p className='text-sm'>{dataLoginUser?.role}</p>
                 </div>
 
                  {/***navigation */}       
@@ -37,6 +41,7 @@ const AdminPanel = () => {
                     <nav className='grid p-4'>
                         <Link to={"all-users"} className='px-2 py-1 hover:bg-slate-100'>Danh sách tài khoản</Link>
                         <Link to={"all-products"} className='px-2 py-1 hover:bg-slate-100'>Danh sách sản phẩm</Link>
+                        <Link to={"slider"} className='px-2 py-1 hover:bg-slate-100'>Sản phẩm nổi bật</Link>
                     </nav>
                 </div>  
         </aside>

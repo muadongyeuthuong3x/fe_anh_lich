@@ -141,7 +141,7 @@ const CategoryProduct = () => {
 
             {/***right side ( product ) */}
             <div className='px-4'>
-              <p className='font-medium text-slate-800 text-lg my-2'>Search Results : {data.length}</p>
+              <p className='font-medium text-slate-800 text-lg my-2'>Tổng số sản phẩm : {data.length}</p>
 
              <div className='min-h-[calc(100vh-120px)] overflow-y-scroll max-h-[calc(100vh-120px)]'>
               {

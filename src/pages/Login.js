@@ -42,11 +42,16 @@ const Login = () => {
 
         const dataApi = await dataResponse.json();
         if(dataApi.success){
-            toast.success(dataApi.message)
-            localStorage.setItem("role_web", JSON.stringify(dataApi.role))
-            navigate('/')
+            const { role, data }  = dataApi
+            const dataLoginSuccess = {
+              role_web : role,
+              cookies : data
+             
+            }
+            localStorage.setItem("role_web", JSON.stringify(dataLoginSuccess))
             fetchUserDetails()
             fetchUserAddToCart()
+            navigate('/')
         }
 
         if(dataApi.error){
@@ -105,15 +110,15 @@ const Login = () => {
                                 </div>
                             </div>
                             <Link to={'/forgot-password'} className='block w-fit ml-auto hover:underline hover:text-red-600'>
-                                Forgot password ?
+                                Lấy lại mật khẩu ?
                             </Link>
                         </div>
 
-                        <button className='bg-red-600 hover:bg-red-700 text-white px-6 py-2 w-full max-w-[150px] rounded-full hover:scale-110 transition-all mx-auto block mt-6'>Login</button>
+                        <button className='bg-red-600 hover:bg-red-700 text-white px-6 py-2 w-full max-w-[150px] rounded-full hover:scale-110 transition-all mx-auto block mt-6'>Đăng nhập</button>
 
                     </form>
 
-                    <p className='my-5'>Don't have account ? <Link to={"/sign-up"} className=' text-red-600 hover:text-red-700 hover:underline'>Sign up</Link></p>
+                    <p className='my-5'>Bạn không có tài khoản ? <Link to={"/sign-up"} className=' text-red-600 hover:text-red-700 hover:underline'>Đăng kí</Link></p>
             </div>
 
 

@@ -1,71 +1,80 @@
-import { createBrowserRouter } from 'react-router-dom'
-import App from '../App'
-import Home from '../pages/Home'
-import Login from '../pages/Login'
+import { createBrowserRouter, Navigate } from 'react-router-dom';
+import App from '../App';
+import Home from '../pages/Home';
+import Login from '../pages/Login';
 import ForgotPassowrd from '../pages/ForgotPassowrd'
-import SignUp from '../pages/SignUp'
-import AdminPanel from '../pages/AdminPanel'
-import AllUsers from '../pages/AllUsers'
-import AllProducts from '../pages/AllProducts'
-import CategoryProduct from '../pages/CategoryProduct'
-import ProductDetails from '../pages/ProductDetails'
-import Cart from '../pages/Cart'
-import SearchProduct from '../pages/SearchProduct'
+import SignUp from '../pages/SignUp';
+import AdminPanel from '../pages/AdminPanel';
+import AllUsers from '../pages/AllUsers';
+import AllProducts from '../pages/AllProducts';
+import CategoryProduct from '../pages/CategoryProduct';
+import ProductDetails from '../pages/ProductDetails';
+import Slider from "../pages/Slider";
+import Cart from '../pages/Cart';
+import SearchProduct from '../pages/SearchProduct';
 
 const router = createBrowserRouter([
     {
-        path : "/",
-        element : <App/>,
-        children : [
+        path: "/",
+        element: <App />,
+        children: [
             {
-                path : "",
-                element : <Home/>
+                path: "",
+                element: <Home />
             },
             {
-                path : "login",
-                element : <Login/>
+                path: "login",
+                element: <Login />
             },
             {
-                path : "forgot-password",
-                element : <ForgotPassowrd/>
+                path: "forgot-password",
+                element: <ForgotPassowrd />
             },
             {
-                path : "sign-up",
-                element : <SignUp/>
+                path: "sign-up",
+                element: <SignUp />
             },
             {
-                path : "product-category",
-                element : <CategoryProduct/>
+                path: "product-category",
+                element: <CategoryProduct />
             },
             {
-                path : "product/:id",
-                element : <ProductDetails/>
+                path: "product/:id",
+                element: <ProductDetails />
             },
             {
-                path : 'cart',
-                element : <Cart/>
+                path: 'cart',
+                element: <Cart />
             },
             {
-                path : "search",
-                element : <SearchProduct/>
+                path: "search",
+                element: <SearchProduct />
             },
             {
-                path : "admin-panel",
-                element : <AdminPanel/>,
-                children : [
+                path: "admin-panel",
+                element: <AdminPanel />,
+                children: [
                     {
-                        path : "all-users",
-                        element : <AllUsers/>
+                        path: "all-users",
+                        element: <AllUsers />
                     },
                     {
-                        path : "all-products",
-                        element : <AllProducts/>
-                    }
+                        path: "all-products",
+                        element: <AllProducts />
+                    },
+                    {
+                        path: "slider",
+                        element: <Slider />
+                    },
                 ]
             },
+            // Catch-all route to redirect to Home
+            {
+                path: "*",
+                element: <Navigate to="/" />
+            }
         ]
     }
-])
+]);
 
-
-export default router
+export default router;
