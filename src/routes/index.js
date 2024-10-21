@@ -10,8 +10,11 @@ import AllProducts from '../pages/AllProducts';
 import CategoryProduct from '../pages/CategoryProduct';
 import ProductDetails from '../pages/ProductDetails';
 import Slider from "../pages/Slider";
+import Service from "../pages/Service"
 import Cart from '../pages/Cart';
 import SearchProduct from '../pages/SearchProduct';
+import ServiceOne  from '../pages/Service1'
+import ServiceTwo from '../pages/Service2';
 
 const router = createBrowserRouter([
     {
@@ -47,6 +50,18 @@ const router = createBrowserRouter([
                 element: <Cart />
             },
             {
+                path: 'service',
+                element: <Service />
+            },
+            {
+                path: 'service-1',
+                element: <ServiceOne />
+            },
+            {
+                path: 'service-2',
+                element: <ServiceTwo />
+            },
+            {
                 path: "search",
                 element: <SearchProduct />
             },
@@ -61,6 +76,10 @@ const router = createBrowserRouter([
                     {
                         path: "all-products",
                         element: <AllProducts />
+                    },
+                    {
+                        path: "slider",
+                        element: <Slider />
                     },
                     {
                         path: "slider",

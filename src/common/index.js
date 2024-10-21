@@ -104,6 +104,18 @@ const SummaryApi = {
         method: 'post',
         headers: { Authorization: `Bearer ${getToken()}` },
     },
+    sliders : {
+        url: `${backendDomain}/api/sliders`,
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${getToken()}`,
+        },
+    },
+    getSliders: {
+        url: `${backendDomain}/api/sliders`,
+        method: 'get',
+    },
 };
 
 export default SummaryApi;

@@ -60,6 +60,12 @@ const Header = () => {
                 </Link>
             </div>
 
+            <div>
+              <Link to={"/service"} className='link_me'> Dịch vụ 1</Link>
+              <Link to={"/service-1"} className='link_me'> Dịch vụ 2</Link>
+              <Link to={"/service-2"} className='link_me'> Dịch vụ 2</Link>
+            </div>
+
             <div className='hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2'>
                 <input type='text' placeholder='Tìm sản phẩm' className='w-full outline-none' onChange={handleSearch} value={search}/>
                 <div className='text-lg min-w-[50px] h-8 bg-red-600 flex items-center justify-center rounded-r-full text-white'>
@@ -68,7 +74,7 @@ const Header = () => {
             </div>
 
 
-            <div className='flex items-center gap-7'>
+            <div className='flex items-center   '>
                 
                 <div className='relative flex justify-center'>
 
@@ -118,7 +124,7 @@ const Header = () => {
               
 
 
-                <div>
+                <div className='button_login_app'>
                   {
                     user?._id  ? (
                       <button onClick={handleLogout} className='px-3 py-1 rounded-full text-white bg-red-600 hover:bg-red-700'>Đăng xuất</button>

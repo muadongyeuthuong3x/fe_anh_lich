@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaCloudUploadAlt } from "react-icons/fa";
 import DisplayImage from '../components/DisplayImage';
 import uploadImage from '../helpers/uploadImage';
 import { MdDelete } from "react-icons/md";
+import SummaryApi from '../common/index';
+import { toast } from 'react-toastify'
 
 const Slider = () => {
 
@@ -40,9 +42,50 @@ const Slider = () => {
         })
     }
     
-    const saveImageSlider = async () => {
-        console.log(1111111,data )
+  const saveImageSlider = async () => {
+    const { productImage } = data;
+    if(productImage.length < 1) {
+      return toast.error("Tối thiểu 1 hình ảnh nổi bật sản phẩm")
     }
+    const responseData = await fetch(SummaryApi.sliders.url, {
+      method: SummaryApi.sliders.method,
+      headers: SummaryApi.sliders.headers,
+      body: JSON.stringify({ productImage }),
+    })
+    const dataJ = await responseData.json()
+
+    if (dataJ.success) {
+      toast.success(dataJ?.message)
+    }
+    if (dataJ.error) {
+      toast.error(dataJ?.message)
+    }
+  }
+
+
+
+  useEffect(() => {
+
+    const getSlidersCode = async () => {
+      try {
+        const response = await fetch(SummaryApi.getSliders.url, {
+          method: SummaryApi.getSliders.method,
+        });
+        const res = await response.json();
+        const { url_image } = res.data;
+        setData((prev) => {
+          return {
+            productImage: [...prev.productImage, ...url_image],
+          };
+        });
+      } catch (error) {
+        console.error('Failed to fetch sliders:', error);
+      }
+    };
+
+    getSlidersCode();
+  }, []);
+
     return (
         <div>
             <h2> Upload ảnh slider</h2>

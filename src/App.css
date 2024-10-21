@@ -19,3 +19,12 @@
     display: none;
 }
 
+
+.slider-image-admin {
+    /* overflow-x: scroll;
+    width: 1000px; */
+}
+
+.button_login_app{
+    margin-right: 10px;
+}
