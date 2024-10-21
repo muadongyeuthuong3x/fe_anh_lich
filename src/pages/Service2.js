@@ -1,4 +1,4 @@
-import Modal from '@mui/material/Modal';
+import { Modal as BaseModal } from '@mui/base/Modal';
 import { TextField } from '@mui/material';
 import { Image } from "antd";
 import { motion } from "framer-motion";
@@ -170,7 +170,7 @@ const ServiceTwo = () => {
                         {showModal && <div className="overlay" onClick={handleCloseModal}></div>}
 
                         {/* Modal */}
-                        <Modal
+                        <BaseModal
                             open={showModal}
                             onClose={handleCloseModal}
                             aria-labelledby="modal-title"
@@ -252,7 +252,7 @@ const ServiceTwo = () => {
                                     </motion.button>
                                 </form>
                             </div>
-                        </Modal>
+                        </BaseModal>
                     </div>
                   </div>
                </div>
@@ -292,7 +292,7 @@ const ServiceTwo = () => {
                                  whileInView={"show"}
                                  viewport={{ once: false, amount: 0.7 }}
                               >
-                                 <Link to="service">ĐỌC THÊM</Link>
+                                 <Link to="/service">ĐỌC THÊM</Link>
                               </motion.button>
                            </div>
                         </div>
@@ -325,7 +325,7 @@ const ServiceTwo = () => {
                                  initial="hidden"
                                  whileInView={"show"}
                                  viewport={{ once: false, amount: 0.7 }}>
-                                 <Link to="service-2">ĐỌC THÊM</Link>
+                                 <Link to="/service-1">ĐỌC THÊM</Link>
                               </motion.button>
                            </div>
                         </div>

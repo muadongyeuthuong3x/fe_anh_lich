@@ -1,4 +1,4 @@
-import Modal from '@mui/material/Modal';
+import { Modal as BaseModal } from '@mui/base/Modal';
 import { TextField } from '@mui/material';
 import { Image } from "antd";
 import { motion } from "framer-motion";
@@ -182,7 +182,7 @@ const Service = () => {
                                 {showModal && <div className="overlay" onClick={handleCloseModal}></div>}
 
                                 {/* Modal */}
-                                <Modal
+                                <BaseModal
                                     open={showModal}
                                     onClose={handleCloseModal}
                                     aria-labelledby="modal-title"
@@ -264,7 +264,7 @@ const Service = () => {
                                             </motion.button>
                                         </form>
                                     </div>
-                                </Modal>
+                                </BaseModal>
                             </div>
 
                         </div>
