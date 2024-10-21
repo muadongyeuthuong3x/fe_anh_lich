@@ -56,17 +56,17 @@ const Header = () => {
       <div className=' h-full container mx-auto flex items-center px-4 justify-between'>
             <div className=''>
                 <Link to={"/"}>
-                 <img src="./logo.jpg" alt="Logo web"  className='"w-[90px] h-[50px]'/>
+                 <img src="./logo.jpg" alt="Logo web"  className='logog-web w-[90px] h-[50px] '/>
                 </Link>
             </div>
 
-            <div>
+            <div className='flex'>
               <Link to={"/service"} className='link_me'> Dịch vụ 1</Link>
               <Link to={"/service-1"} className='link_me'> Dịch vụ 2</Link>
-              <Link to={"/service-2"} className='link_me'> Dịch vụ 2</Link>
+              <Link to={"/service-2"} className='link_me'> Dịch vụ 3</Link>
             </div>
 
-            <div className='hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2'>
+            <div className='hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2 inputmb-search'>
                 <input type='text' placeholder='Tìm sản phẩm' className='w-full outline-none' onChange={handleSearch} value={search}/>
                 <div className='text-lg min-w-[50px] h-8 bg-red-600 flex items-center justify-center rounded-r-full text-white'>
                   <GrSearch />

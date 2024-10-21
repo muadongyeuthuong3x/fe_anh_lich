@@ -470,8 +470,8 @@ label[data-shrink=false]+.MuiInputBase-formControl .css-1n4twyu-MuiInputBase-inp
 
 @media (max-width: 720px) {
   .link_me {
-    font-size: 11px;
-    padding: 6px;
+    font-size: 15px !important;
+    padding: 0 10px 0 10px !important;
   }
 }
 
@@ -811,10 +811,64 @@ Services */
 }
 
 
-@media (max-width: 780px) {
+@media (max-width: 420px) {
+  .link_me {
+    font-size: 10px !important;
+    padding: 0 5px 0 5px !important;
+  } 
+
+  .button_login_app a{
+    font-size: 12px !important;
+  }
+  
+  .button_login_app {
+    margin-right: 15px !important;
+  }
+
+
+  .inputmb-search {
+    display: none !important;
+  }
+}
+
+
+@media (max-width: 1300px) {
+  .inputmb-search {
+    display: none !important;
+  }
+
+  .info .text {
+    margin-left: 20px !important;
+  }
+
+  .info .button {
+    margin-left: 20px !important;
+  }
+
+  .link_me {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 1080px) {
   .service-child {
     width: 100%;
     margin-bottom: 50px;
+  }
+
+  .button_login_app a{
+    font-size: 15px !important;
+  }
+
+  .inputmb-search {
+    display: none !important;
+  }
+
+  .logog-web {
+    width: 30px;
+    height: 30px;
   }
 
   .service-child .info {
