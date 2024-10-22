@@ -12,11 +12,49 @@ body {
   @apply bg-slate-100
 }
 
+.header-web {
+  height: 100px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+.option-introduce{
+  padding-left: 20px;
+  font-size: 18px;
+}
+.category-introduce {
+  font-size: 17px;
+  color: rgb(173 96 11);
+}
+
+.list-option-introduce {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.introduce1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.introduce2{
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.introdce_descript {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.name_company {
+  font-size: 30px;
+  font-weight: bold;
+  color: #007aff;
+}
 
 @layer utilities {
   .banner-bg-all {
@@ -204,6 +242,10 @@ code {
     font-size: 24px;
   }
 
+  .bannerHome >img {
+    height:  400px !important;
+  }
+
   @media screen and (max-width: 1080px) {
     .cunstom-footer {
       display: flex;
@@ -223,7 +265,7 @@ code {
     }
 
     .block_footer_one {
-      width: 33.3%;
+      width: 50%;
       /* Width of each block */
       font-size: 15px;
       /* Font size */
@@ -462,6 +504,24 @@ label[data-shrink=false]+.MuiInputBase-formControl .css-1n4twyu-MuiInputBase-inp
   margin-top: 50px;
 }
 
+.new-product {
+  width: 300px;
+  margin: auto;
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.new-product1{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .link_me {
   font-size: 30px;
   font-weight: bold;
@@ -472,6 +532,17 @@ label[data-shrink=false]+.MuiInputBase-formControl .css-1n4twyu-MuiInputBase-inp
   .link_me {
     font-size: 15px !important;
     padding: 0 10px 0 10px !important;
+  }
+  .tittle_footer {
+    font-size: 14px !important;
+  }
+  .link_me {
+    font-size: 9px !important;
+    padding: 0 10px 0 10px !important;
+  }
+
+  .button_login_app{
+    font-size: 15px !important;
   }
 }
 
@@ -810,12 +881,21 @@ Services */
   font-weight: bold;
 }
 
+.inputmb-search {
+  width: 400px;
+  margin: auto;
+}
+
 
 @media (max-width: 420px) {
   .link_me {
     font-size: 10px !important;
     padding: 0 5px 0 5px !important;
   } 
+
+  .inputmb-search {
+    width: 300px !important;
+  }
 
   .button_login_app a{
     font-size: 12px !important;
@@ -824,18 +904,11 @@ Services */
   .button_login_app {
     margin-right: 15px !important;
   }
-
-
-  .inputmb-search {
-    display: none !important;
-  }
 }
 
 
 @media (max-width: 1300px) {
-  .inputmb-search {
-    display: none !important;
-  }
+
 
   .info .text {
     margin-left: 20px !important;
@@ -858,13 +931,15 @@ Services */
     margin-bottom: 50px;
   }
 
+  .block_footer_one>.tittle_footer {
+    font-size: 18px;
+}
+
   .button_login_app a{
     font-size: 15px !important;
   }
 
-  .inputmb-search {
-    display: none !important;
-  }
+
 
   .logog-web {
     width: 30px;

@@ -59,14 +59,6 @@ const Footer = () => {
 
       </div>
 
-      <div className='block_footer_one'>
-        <h2 className='tittle_footer'>Tài khoản</h2>
-        <div className='nav-link'>Hồ sơ của tôi</div>
-        <div className='nav-link'>Danh mục của tôi</div>
-        <div className='nav-link'>
-          <p onClick={logout} className="cursor-pointer">Đăng xuất</p>
-        </div>
-      </div>
 
     </div>
   )

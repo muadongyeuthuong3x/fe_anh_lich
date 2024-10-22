@@ -15,6 +15,7 @@ import Cart from '../pages/Cart';
 import SearchProduct from '../pages/SearchProduct';
 import ServiceOne  from '../pages/Service1'
 import ServiceTwo from '../pages/Service2';
+import Introduce from "../pages/Introduce"
 
 const router = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
             {
                 path: "",
                 element: <Home />
+            },
+            {
+                path: "introduce",
+                element: <Introduce />
             },
             {
                 path: "login",
