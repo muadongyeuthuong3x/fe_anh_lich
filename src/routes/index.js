@@ -16,6 +16,8 @@ import SearchProduct from '../pages/SearchProduct';
 import ServiceOne  from '../pages/Service1'
 import ServiceTwo from '../pages/Service2';
 import Introduce from "../pages/Introduce"
+import ContactAdmin from "../pages/ContactAdmin"
+import ContactPage from "../pages/ContactPage"
 
 const router = createBrowserRouter([
     {
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: "introduce",
                 element: <Introduce />
+            },
+            {
+                path: "contact",
+                element: <ContactAdmin />
             },
             {
                 path: "login",
@@ -87,8 +93,8 @@ const router = createBrowserRouter([
                         element: <Slider />
                     },
                     {
-                        path: "slider",
-                        element: <Slider />
+                        path: "contact-page",
+                        element: <ContactPage />
                     },
                 ]
             },

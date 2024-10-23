@@ -12,6 +12,50 @@ body {
   @apply bg-slate-100
 }
 
+.with-header-table {
+  width: 200px;
+}
+.form-contact-admin {
+  display: grid;
+  margin-top: 30px;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2, 20px);
+  gap: 50px;
+  margin-bottom: 50px;
+}
+.contact-admin-input {
+  border:  1px solid gray;
+  height: 40px;
+  padding-left: 20px;
+  border-radius: 35px;
+}
+
+.google-map {
+  width: 100%;
+  height: 350px;
+  margin-bottom: 30px;
+}
+
+.description-admin-input {
+  height: 110px;
+  padding-left: 30px;
+  border:  1px solid gray;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.send_data_contact {
+  display: flex;
+  border: 1px solid #07bc0c;
+  padding: 7px 50px 7px 50px;
+  background: #07bc0c;
+  border-radius: 16px;
+  align-items: center;
+  margin:  35px 0px 35px 0px;
+  text-align: center;
+  color: white;
+}
+
 .header-web {
   height: 100px;
 }
@@ -909,6 +953,14 @@ Services */
 
 @media (max-width: 1300px) {
 
+  .form-contact-admin {
+    grid-template-rows: repeat(2, 20px) !important;
+    grid-template-columns : none;
+  }
+
+  .google-map {
+    height: 250px  !important;
+  }
 
   .info .text {
     margin-left: 20px !important;

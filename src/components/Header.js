@@ -52,7 +52,7 @@ const Header = () => {
           <Link to={"/introduce"} className='link_me'> Giới thiệu </Link>
             <Link to={"/service"} className='link_me'> Các gói dịch vụ </Link>
            
-            <Link to={"/service-1"} className='link_me'> Liên hệ </Link>
+            <Link to={"/contact"} className='link_me'> Liên hệ </Link>
           </div>
 
           <div className='flex items-center   '>
