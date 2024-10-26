@@ -39,7 +39,7 @@ const AdminPanel = () => {
                  {/***navigation */}       
                 <div>   
                     <nav className='grid p-4'>
-                        <Link to={"all-users"} className='px-2 py-1 hover:bg-slate-100'>Danh sách tài khoản</Link>
+                        {/* <Link to={"all-users"} className='px-2 py-1 hover:bg-slate-100'>Danh sách tài khoản</Link> */}
                         <Link to={"all-products"} className='px-2 py-1 hover:bg-slate-100'>Danh sách sản phẩm</Link>
                         <Link to={"slider"} className='px-2 py-1 hover:bg-slate-100'>Sản phẩm nổi bật</Link>
                         <Link to={"contact-page"} className='px-2 py-1 hover:bg-slate-100'>Danh sách người dùng liên hệ</Link>

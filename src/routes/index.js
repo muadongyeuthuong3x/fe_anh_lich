@@ -53,7 +53,7 @@ const router = createBrowserRouter([
                 element: <CategoryProduct />
             },
             {
-                path: "product/:id",
+                path: "product/:id/:idProduct",
                 element: <ProductDetails />
             },
             {
@@ -80,10 +80,10 @@ const router = createBrowserRouter([
                 path: "admin-panel",
                 element: <AdminPanel />,
                 children: [
-                    {
-                        path: "all-users",
-                        element: <AllUsers />
-                    },
+                    // {
+                    //     path: "all-users",
+                    //     element: <AllUsers />
+                    // },
                     {
                         path: "all-products",
                         element: <AllProducts />

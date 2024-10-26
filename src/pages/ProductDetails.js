@@ -42,7 +42,8 @@ const ProductDetails = () => {
         "content-type" : "application/json"
       },
       body : JSON.stringify({
-        productId : params?.id
+        productId : params?.idProduct,
+        id: params?.id
       })
     })
     setLoading(false)
@@ -52,8 +53,6 @@ const ProductDetails = () => {
     setActiveImage(dataReponse?.data?.productImage[0])
 
   }
-
-  console.log("data",data)
 
   useEffect(()=>{
     fetchProductDetails()
@@ -186,9 +185,9 @@ const ProductDetails = () => {
             ) : 
             (
               <div className='flex flex-col gap-1'>
-                <p className='bg-red-200 text-red-600 px-2 rounded-full inline-block w-fit'>{data?.brandName}</p>
+                <p className='bg-red-200 text-red-600 px-2 rounded-full inline-block w-fit'>Kích cỡ : {data?.brandName}</p>
                 <h2 className='text-2xl lg:text-4xl font-medium'>{data?.productName}</h2>
-                <p className='capitalize text-slate-400'>{data?.category}</p>
+                {/* <p className='capitalize text-slate-400'>{data?.category}</p> */}
 
                 <div className='text-red-600 flex items-center gap-1'>
                     <FaStar/>
@@ -204,12 +203,12 @@ const ProductDetails = () => {
                 </div>
 
                 <div className='flex items-center gap-3 my-2'>
-                  <button className='border-2 border-red-600 rounded px-3 py-1 min-w-[120px] text-red-600 font-medium hover:bg-red-600 hover:text-white' onClick={(e)=>handleBuyProduct(e,data?._id)}>Buy</button>
-                  <button className='border-2 border-red-600 rounded px-3 py-1 min-w-[120px] font-medium text-white bg-red-600 hover:text-red-600 hover:bg-white' onClick={(e)=>handleAddToCart(e,data?._id)}>Add To Cart</button>
+                  {/* <button className='border-2 border-red-600 rounded px-3 py-1 min-w-[120px] text-red-600 font-medium hover:bg-red-600 hover:text-white' onClick={(e)=>handleBuyProduct(e,data?._id)}>Buy</button> */}
+                  <button className='border-2 border-red-600 rounded px-3 py-1 min-w-[120px] font-medium text-white bg-red-600 hover:text-red-600 hover:bg-white' onClick={(e)=>handleAddToCart(e,data?._id)}>Đặt làm sản phẩm</button>
                 </div>
 
                 <div>
-                  <p className='text-slate-600 font-medium my-1'>Description : </p>
+                  <p className='text-slate-600 font-medium my-1'>Chi tiết sản phẩm : </p>
                   <p>{data?.description}</p>
                 </div>
               </div>
@@ -222,7 +221,7 @@ const ProductDetails = () => {
 
       {
         data.category && (
-          <CategroyWiseProductDisplay category={data?.category} heading={"Các sản phẩm liên quan"}/>
+          <CategroyWiseProductDisplay category={data?.category} heading={"Các sản phẩm liên quan"} idCategory = {params?.id}/>
         )
       }
      

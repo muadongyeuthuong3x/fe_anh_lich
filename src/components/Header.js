@@ -44,7 +44,7 @@ const Header = () => {
         <div className=' h-full container mx-auto flex items-center px-4 justify-between'>
           <div className=''>
             <Link to={"/"}>
-              <img src="./logo.jpg" alt="Logo web" className='logog-web w-[90px] h-[50px] ' />
+              <img src="./logoweb.jpg" alt="Logo web" className='logog-web w-[90px] h-[50px] ' />
             </Link>
           </div>
 
